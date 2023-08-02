@@ -1,4 +1,4 @@
-binaries/
-out/
+bin/
+decompiled/
 input/*
 !input/.gitkeep
