@@ -54,6 +54,7 @@ if "%~1"=="" (
 call "scripts\dont_run-download-dependencies.bat"
 
 java -jar "%bin_path%\apktool.jar" b "%folder_path%"
+java -jar "%bin_path%\apksigner.jar" -a "%folder_path%\dist\%selected_folder%.apk"
 
 echo.
 echo Do you want to re-install the APK via adb? [Y/n]
@@ -61,7 +62,9 @@ echo Default: No
 set /p "do_adb=Option: "
 
 if /i "%do_adb%" == "Y" (
-    %bin_path%\adb.exe install -r "%folder_path%\dist\%selected_folder%.apk"
+    %bin_path%\adb.exe install -r "%folder_path%\dist\%selected_folder%-aligned-debugSigned.apk"
+) else (
+    echo Skipping installation
 )
 
 echo.
