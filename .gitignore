@@ -1,0 +1,4 @@
+apk-tools/bin/
+apk-tools/decompiled/
+apk-tools/input/*
+!apk-tools/input/.gitkeep
