@@ -22,3 +22,8 @@ for %%f in (%adb_files%) do (
         curl -o "%bin_path%\%%f" -sLJO https://github.com/awake558/adb-win/blob/master/SDK_Platform-Tools_for_Windows/platform-tools_r%adb_ver%-windows/%%f
     )
 )
+
+if not exist "%bin_path%\7z.exe" (
+    echo Downloading 7z
+    curl -o "%bin_path%\7z.exe" -sLJO https://www.7-zip.org/a/7zr.exe
+)
